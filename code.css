@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #70c5ce; /* Sky blue */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevents scrollbars if canvas is slightly off */
+}
+
+#game-container {
+    position: relative;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#gameCanvas {
+    display: block; /* Removes extra space below canvas */
+    background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); /* Optional subtle background texture */
+    background-color: #70c5ce; /* Fallback if image fails */
+}
+
+#start-screen, #game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+#start-screen h1, #game-over-screen h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+#start-screen p {
+    color: #555;
+    font-size: 0.9em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#sensitivity-control {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(230, 230, 230, 0.85);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    z-index: 5;
+    font-size: 0.9em;
+    color: #333;
+}
+
+#sensitivity-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#sensitivitySlider {
+    width: 120px;
+    vertical-align: middle;
+}
+
+#sensitivityValue {
+    display: inline-block;
+    min-width: 25px;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+#score-display {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    z-index: 5;
+    display: none; /* Hidden initially */
+}
